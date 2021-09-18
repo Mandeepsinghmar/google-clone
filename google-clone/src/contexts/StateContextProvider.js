@@ -8,7 +8,7 @@ const fetchData = async (url) => {
     method: 'GET',
     headers: {
       'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-      'x-rapidapi-key': '67c69ac6demshc1748786c9a1352p1d807cjsnc8f63d29c088',
+      'x-rapidapi-key': process.env.REACT_APP_API_KEY,
     },
   });
   const data = await res.json();
