@@ -46,7 +46,7 @@ export const StateContextProvider = ({ children }) => {
   const getVideoResults = async () => {
     setLoading(true);
 
-    const data = await fetchData(`${baseUrl}/search/q=${searchTerm} videos &num=100`);
+    const data = await fetchData(`${baseUrl}/search/q=${searchTerm} videos`);
     setVideoResults(data);
     setLoading(false);
   };
