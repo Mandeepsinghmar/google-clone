@@ -13,7 +13,7 @@ export const ImageResults = () => {
     return <Loading />;
   }
   return (
-    <div className="flex flex-wrap gap-10">
+    <div className="flex flex-wrap space-y-10">
       {
                 imageResults?.image_results?.map((item, index) => (
                   <a href={item.link?.href} target="_blank" key={index} rel="noreferrer">

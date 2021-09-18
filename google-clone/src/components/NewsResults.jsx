@@ -13,7 +13,7 @@ export const NewsResults = () => {
     return <Loading />;
   }
   return (
-    <div className="sm:px-56 flex flex-wrap justify-between items-center gap-6">
+    <div className="sm:px-56 flex flex-wrap justify-between items-center space-y-6">
       {
                 newsResults?.map((news) => (
                   <div key={news.id} className="md:w-2/5 w-full ">

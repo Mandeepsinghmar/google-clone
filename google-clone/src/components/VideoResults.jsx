@@ -14,7 +14,7 @@ export const VideoResults = () => {
     return <Loading />;
   }
   return (
-    <div className="flex justify-between gap-8 flex-wrap">
+    <div className="flex justify-between flex-wrap space-y-10">
       {
             videoResults?.results?.map((video, index) => (
               <div key={index}>

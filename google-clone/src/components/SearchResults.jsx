@@ -14,7 +14,7 @@ export const SearchResults = () => {
   }
 
   return (
-    <div className="sm:px-56 flex flex-wrap justify-between gap-6">
+    <div className="sm:px-56 flex flex-wrap justify-between space-y-6">
       {searchResults?.results?.map((result, index) => (
         <div key={index} className="md:w-2/5 w-full">
           <a href={result.link} target="_blank" rel="noreferrer">
