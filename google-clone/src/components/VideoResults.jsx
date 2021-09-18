@@ -22,7 +22,7 @@ export const VideoResults = () => {
                   className="rounded-sm"
                   url={video.additional_links?.[0].href}
                   controls
-                  width="300px"
+                  width="350px"
                   height="360px"
                 />
               </div>
