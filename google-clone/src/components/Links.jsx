@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Links = () => (
   <div className="flex sm:justify-around justify-between items-center mt-4">
