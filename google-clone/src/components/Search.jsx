@@ -6,7 +6,7 @@ export const Search = () => {
   const { setSearchTerm, searchTerm } = useStateContext();
 
   return (
-    <div className="flex flex-col sm:ml-48 md:ml-72 sm:-mt-14">
+    <div className="sm:ml-48 md:ml-72 sm:-mt-10 mt-3">
       <input
         value={searchTerm}
         type="text"
