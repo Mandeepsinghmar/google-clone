@@ -18,7 +18,7 @@ export const NewsResults = () => {
                 newsResults?.map((news) => (
                   <div key={news.id} className="md:w-2/5 w-full ">
                     <a href={news.links?.[0].href} target="_blank" rel="noreferrer " className="hover:underline ">
-                      <p className="text-lg text-blue-300 hover:text-gray-200">{news.title}</p>
+                      <p className="text-lg dark:text-blue-300 text-blue-700">{news.title}</p>
                     </a>
                     <div className="flex gap-4">
                       <a href={news.source?.href} target="_blank" rel="noreferrer" className="hover:underline hover:text-blue-300"> {news.source?.href}</a>

@@ -23,7 +23,7 @@ export const SearchResults = () => {
                 ? result.link.substring(0, 30)
                 : result.link}
             </p>
-            <p className="text-lg hover:underline text-blue-300 hover:text-white ">{result.title}</p>
+            <p className="text-lg hover:underline dark:text-blue-300 text-blue-700  ">{result.title}</p>
           </a>
         </div>
       ))}
