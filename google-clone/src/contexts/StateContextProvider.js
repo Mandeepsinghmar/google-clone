@@ -22,7 +22,7 @@ export const StateContextProvider = ({ children }) => {
   const [videoResults, setVideoResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const [searchTerm, setSearchTerm] = useState('Elon Musk');
+  const [searchTerm, setSearchTerm] = useState('');
   const getSearchResults = async () => {
     setLoading(true);
     const data = await fetchData(`${baseUrl}/search/q=${searchTerm}&num=50`);
@@ -46,7 +46,7 @@ export const StateContextProvider = ({ children }) => {
   const getVideoResults = async () => {
     setLoading(true);
 
-    const data = await fetchData(`${baseUrl}/search/q=${searchTerm} videos`);
+    const data = await fetchData(`${baseUrl}/search/q=${searchTerm} videos&num=20`);
     setVideoResults(data);
     setLoading(false);
   };

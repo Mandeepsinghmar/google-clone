@@ -14,16 +14,15 @@ export const VideoResults = () => {
     return <Loading />;
   }
   return (
-    <div className="flex justify-between flex-wrap ">
+    <div className="flex flex-wrap ">
       {
             videoResults?.results?.map((video, index) => (
-              <div key={index} className="p-5">
+              <div key={index} className="p-2">
                 <ReactPlayer
-                  className="rounded-sm"
                   url={video.additional_links?.[0].href}
                   controls
-                  width="360px"
-                  height="360px"
+                  width="350px"
+                  height="200px"
                 />
               </div>
 
