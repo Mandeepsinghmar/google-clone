@@ -20,6 +20,7 @@ export const Routes = () => (
       <Route path="/videos">
         <VideoResults />
       </Route>
+
     </Switch>
   </div>
 

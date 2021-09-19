@@ -50,6 +50,7 @@ export const StateContextProvider = ({ children }) => {
     setVideoResults(data);
     setLoading(false);
   };
+
   return (
     <StateContext.Provider value={{ getSearchResults, getVideoResults, getImageResults, getNewsResults, newsResults, imageResults, videoResults, searchResults, searchTerm, setSearchTerm, loading }}>
       {children}

@@ -10,7 +10,7 @@ export const Search = () => {
       <input
         value={searchTerm}
         type="text"
-        className="sm:w-96 w-80 h-10 dark:bg-gray-200 bg-gray-100 rounded-full shadow-sm outline-none p-6 text-black  "
+        className="sm:w-96 w-80 h-10 dark:bg-gray-200  border rounded-full shadow-sm outline-none p-6 text-black  "
         placeholder="🔍 Search Google or type URL"
         onChange={(e) => setSearchTerm(e.target.value)}
       />
