@@ -21,7 +21,7 @@ export const VideoResults = () => {
                 <ReactPlayer
                   url={video.additional_links?.[0].href}
                   controls
-                  width="350px"
+                  width="355px"
                   height="200px"
                 />
               </div>

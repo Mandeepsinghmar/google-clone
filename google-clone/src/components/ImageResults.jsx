@@ -17,7 +17,7 @@ export const ImageResults = () => {
       {
                 imageResults?.image_results?.map((item, index) => (
                   <a href={item.link?.href} target="_blank" key={index} rel="noreferrer" className="sm:p-3 p-5">
-                    <img src={item.image?.src} className="sm:w-40 w-36 h-44 rounded-lg" />
+                    <img src={item.image?.src} />
                     <p className="sm:w-36 w-36 break-words text-sm mt-2">{ item.link?.title}</p>
                   </a>
                 ))
