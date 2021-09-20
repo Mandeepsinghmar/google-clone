@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
 const StateContext = createContext();
+
 const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1';
 
 const fetchData = async (url) => {
@@ -16,43 +17,58 @@ const fetchData = async (url) => {
 };
 
 export const StateContextProvider = ({ children }) => {
-  const [searchResults, setSearchResults] = useState();
-  const [newsResults, setNewsResults] = useState([]);
-  const [imageResults, setImageResults] = useState([]);
-  const [videoResults, setVideoResults] = useState([]);
+  const [results, setResults] = useState({
+    searchResults: [],
+    newsResults: [],
+    imageResults: [],
+    videoResults: [],
+  });
   const [loading, setLoading] = useState(false);
-
   const [searchTerm, setSearchTerm] = useState('');
+
   const getSearchResults = async () => {
     setLoading(true);
     const data = await fetchData(`${baseUrl}/search/q=${searchTerm}&num=50`);
     setLoading(false);
-    setSearchResults(data);
+    setResults({ searchResults: data });
   };
+
   const getNewsResults = async () => {
     setLoading(true);
-
     const data = await fetchData(`${baseUrl}/news/q=${searchTerm}`);
-    setNewsResults(data?.entries);
+    setResults({ newsResults: data?.entries });
     setLoading(false);
   };
+
   const getImageResults = async () => {
     setLoading(true);
-
     const data = await fetchData(`${baseUrl}/images/q=${searchTerm}&num=100`);
-    setImageResults(data);
+    setResults({ imageResults: data });
     setLoading(false);
   };
+
   const getVideoResults = async () => {
     setLoading(true);
-
-    const data = await fetchData(`${baseUrl}/search/q=${searchTerm} videos&num=20`);
-    setVideoResults(data);
+    const data = await fetchData(
+      `${baseUrl}/search/q=${searchTerm} videos`,
+    );
+    setResults({ videoResults: data });
     setLoading(false);
   };
 
   return (
-    <StateContext.Provider value={{ getSearchResults, getVideoResults, getImageResults, getNewsResults, newsResults, imageResults, videoResults, searchResults, searchTerm, setSearchTerm, loading }}>
+    <StateContext.Provider
+      value={{
+        getSearchResults,
+        getVideoResults,
+        getImageResults,
+        getNewsResults,
+        results,
+        searchTerm,
+        setSearchTerm,
+        loading,
+      }}
+    >
       {children}
     </StateContext.Provider>
   );

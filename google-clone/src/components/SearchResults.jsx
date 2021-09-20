@@ -1,21 +1,24 @@
 import React, { useEffect } from 'react';
+
 import { useStateContext } from '../contexts/StateContextProvider';
 import { Loading } from './Loading';
 
 export const SearchResults = () => {
-  const { searchResults, loading, getSearchResults, searchTerm } = useStateContext();
+  const { results, loading, getSearchResults, searchTerm } = useStateContext();
+
   useEffect(() => {
     if (searchTerm !== '') {
       getSearchResults();
     }
   }, [searchTerm]);
+
   if (loading) {
     return <Loading />;
   }
 
   return (
     <div className="sm:px-56 flex flex-wrap justify-between space-y-6">
-      {searchResults?.results?.map((result, index) => (
+      {results?.searchResults?.results?.map((result, index) => (
         <div key={index} className="md:w-2/5 w-full">
           <a href={result.link} target="_blank" rel="noreferrer">
             <p className="text-sm">

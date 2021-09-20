@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import { ImageResults } from './ImageResults';
 import { NewsResults } from './NewsResults';
 import { SearchResults } from './SearchResults';
